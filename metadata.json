@@ -1,0 +1,6 @@
+{
+  "name": "Repositorio e Historial de Informes Diarios de Interventoría",
+  "description": "Portal de gestión y archivo cronológico de informes diarios de interventoría de obra civil con detección de frentes por IA y exportación a Excel.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
