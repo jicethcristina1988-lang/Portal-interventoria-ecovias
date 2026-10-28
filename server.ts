@@ -58,77 +58,7 @@ interface AnalyzedFrente {
  * Standard civil engineering operational templates for smart visual differentiation.
  * Matches explicit user requirements: minicargador, manual excavation, pipe storage, etc.
  */
-const DIFFERENTIATED_TEMPLATES = [
-  {
-    activity: 'Movimiento y nivelación de terreno con minicargador',
-    description: 'Maniobras de despeje, acarreo interno y conformación de rasante con minicargador sobre terreno natural.',
-    detectedEquipment: ['Minicargador sobre ruedas (Bobcat)', 'Palas cuadradas', 'Estacas de replanteo'],
-    personnel: { residenteInterventoria: 1, residenteContratista: 1, siso: 1, obreros: 3, topografo: 0 },
-    weather: 'Soleado' as const,
-  },
-  {
-    activity: 'Excavación manual de zanja para tubería',
-    description: 'Profundización y perfilado manual de paredes de zanja con picas y palas para instalación de redes de servicio.',
-    detectedEquipment: ['Palas de punta redonda', 'Picas de zanjeo', 'Carretillas de obra', 'Baldes de extracción'],
-    personnel: { residenteInterventoria: 1, residenteContratista: 1, siso: 1, obreros: 5, topografo: 0 },
-    weather: 'Soleado' as const,
-  },
-  {
-    activity: 'Acopio e inspección de tubería de alcantarillado',
-    description: 'Verificación visual de estado e integridad física y acopio longitudinal de tubería al costado de la calzada.',
-    detectedEquipment: ['Tubería de alcantarillado', 'Eslingas de cargue', 'Nivel de mano', 'Calibrador'],
-    personnel: { residenteInterventoria: 1, residenteContratista: 1, siso: 1, obreros: 2, topografo: 0 },
-    weather: 'Soleado' as const,
-  },
-  {
-    activity: 'Vaciado y fundida de concreto en andén peatonal',
-    description: 'Colocación, extendido, vibrado y nivelación con boquillera de concreto hidráulico premezclado en franja peatonal.',
-    detectedEquipment: ['Camión mixer de concreto 8m³', 'Boquillera de aluminio', 'Vibrador de concreto pendular', 'Llanas metálicas'],
-    personnel: { residenteInterventoria: 1, residenteContratista: 1, siso: 1, obreros: 7, topografo: 0 },
-    weather: 'Soleado' as const,
-  },
-  {
-    activity: 'Armado e instalación de acero de refuerzo con cizalla',
-    description: 'Habilitado, amarre sistemático con alambre negro y disposición de parrillas y canastas de acero corrugado.',
-    detectedEquipment: ['Cizalla cortadora de varilla', 'Bancos de doblado', 'Bicheros de amarre', 'Cintas métricas'],
-    personnel: { residenteInterventoria: 1, residenteContratista: 1, siso: 1, obreros: 6, topografo: 0 },
-    weather: 'Soleado' as const,
-  },
-  {
-    activity: 'Compactación mecánica de base granular con vibrocompactador',
-    description: 'Ejecución de pasadas sistemáticas de compactación con rodillo monocilíndrico y vibrocompactador tipo rana.',
-    detectedEquipment: ['Rodillo vibrocompactador monocilíndrico', 'Vibrocompactador tipo rana', 'Rastrillos de base'],
-    personnel: { residenteInterventoria: 1, residenteContratista: 1, siso: 1, obreros: 4, topografo: 1 },
-    weather: 'Soleado' as const,
-  },
-  {
-    activity: 'Nivelación topográfica y replanteo de rasante con estación total',
-    description: 'Toma y control altimétrico de cotas de rasante, alineamiento de ejes y verificación de pendientes con prisma.',
-    detectedEquipment: ['Estación total topográfica con trípode', 'Prisma reflectivo y jalón', 'Nivel óptico de precisión'],
-    personnel: { residenteInterventoria: 1, residenteContratista: 1, siso: 1, obreros: 2, topografo: 1 },
-    weather: 'Soleado' as const,
-  },
-  {
-    activity: 'Instalación de formaleta y encofrado metálico',
-    description: 'Montaje, aplomado y aseguramiento de paneles modulares de formaleta metálica con puntales regulables.',
-    detectedEquipment: ['Paneles modulares de formaleta', 'Puntales telescópicos metálicos', 'Niveles de burbuja', 'Martillos'],
-    personnel: { residenteInterventoria: 1, residenteContratista: 1, siso: 1, obreros: 5, topografo: 0 },
-    weather: 'Soleado' as const,
-  },
-  {
-    activity: 'Instalación y tendido de tubería sanitaria en zanja',
-    description: 'Alineación, acople de juntas herméticas y asiento sobre cama de arena de tubería sanitaria en zanja excavada.',
-    detectedEquipment: ['Tubería de drenaje sanitario', 'Tirfor / tecle de tracción', 'Nivel de pendiente', 'Palas'],
-    personnel: { residenteInterventoria: 1, residenteContratista: 1, siso: 1, obreros: 4, topografo: 0 },
-    weather: 'Soleado' as const,
-  },
-  {
-    activity: 'Excavación mecánica en zanja con retroexcavadora',
-    description: 'Apertura mecánica de zanja y cargue directo de material a volqueta con retroexcavadora sobre orugas.',
-    detectedEquipment: ['Retroexcavadora sobre orugas Caterpillar', 'Volqueta doble troque 14m³', 'Palas y picas'],
-    personnel: { residenteInterventoria: 1, residenteContratista: 1, siso: 1, obreros: 3, topografo: 1 },
-    weather: 'Soleado' as const,
-  },
+const DIFFERENTIATED_TEMPLATES = [];
 ];
 
 /**
