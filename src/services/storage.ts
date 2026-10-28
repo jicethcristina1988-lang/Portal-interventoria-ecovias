@@ -1,6 +1,6 @@
 import { DailyReport } from '../types';
 
-const STORAGE_KEY = 'interventoria_informes_diarios_v3';
+const STORAGE_KEY = 'INFORMES';
 
 export const storageService = {
   getReports(): DailyReport[] {
