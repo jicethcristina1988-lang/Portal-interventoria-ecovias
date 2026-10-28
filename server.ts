@@ -58,7 +58,14 @@ interface AnalyzedFrente {
  * Standard civil engineering operational templates for smart visual differentiation.
  * Matches explicit user requirements: minicargador, manual excavation, pipe storage, etc.
  */
-const DIFFERENTIATED_TEMPLATES = [];
+const DIFFERENTIATED_TEMPLATES = [
+  {
+    activity: "Movimiento y nivelación de terreno con minicargador",
+    description: "Maniobras de despeje, acarreo interno y conformación de rasante con minicargador sobre terreno natural.",
+    detectedEquipment: ["Minicargador sobre ruedas (Bobcat)", "Palas cuadradas", "Estacas de replanteo"],
+    personnel: { residenteInterventoria: 1, residenteContratista: 1, siso: 1, obreros: 3, topografo: 0 },
+    weather: "Soleado" as const
+  }
 ];
 
 /**
