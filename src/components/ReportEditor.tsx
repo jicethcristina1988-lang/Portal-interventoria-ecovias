@@ -218,13 +218,14 @@ export const ReportEditor: React.FC<ReportEditorProps> = ({
           };
         });
       }
-
+setIsAnalyzing(false);
       setNotification({
         type: 'success',
         message: `¡Análisis individual completado con éxito! Se procesaron ${accumulatedFrentes.length} fotografía(s) de forma independiente con actividades diferenciadas y sin repetición de texto.`,
       });
     } catch (err: any) {
       console.error('Error in photo analysis:', err);
+      setIsAnalyzing(false);
       setNotification({
         type: 'error',
         message: 'Ocurrió un inconveniente durante el análisis independiente de fotografías. Puedes ingresar o editar los datos manualmente.',
