@@ -145,58 +145,24 @@ export const ReportEditor: React.FC<ReportEditorProps> = ({
         ];
 
         // Call individual photo analysis endpoint
-        const response = await fetch('/api/analyze-single-photo', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            image: imagePayload,
-            index: startingFrenteNumber + i,
-            totalImages: startingFrenteNumber + fileList.length,
-            previousFrentes: previousSummaries,
-          }),
-        });
+        const response = await const newFrente: FrenteItem = {
+  id: `frente-${Date.now()}-${i}`,
+  frenteNumber: frenteNum,
+  activity: '',
+  description: '',
+  photoUrl: base64,
+  photoFileName: file.name || `frente_${frenteNum}.jpg`,
+  personnel: {
+    residenteInterventoria: 1,
+    residenteContratista: 1,
+    siso: 1,
+    obreros: 4,
+    topografo: 0,
+  },
+  novedades: '',
+};
 
-        if (!response.ok) {
-          throw new Error(`Error en el servidor al analizar fotografía ${i + 1}.`);
-        }
-
-        const analysis = await response.json();
-
-        // Enforce weather priority (Lluvioso > Nublado > Soleado)
-        if (analysis.weather === 'Lluvioso') {
-          detectedWeather = 'Lluvioso';
-        } else if (analysis.weather === 'Nublado' && detectedWeather !== 'Lluvioso') {
-          detectedWeather = 'Nublado';
-        }
-
-        // Collect detected equipment
-        if (Array.isArray(analysis.detectedEquipment)) {
-          analysis.detectedEquipment.forEach((eq: string) => {
-            if (eq && eq.trim() && !detectedEquipments.includes(eq.trim())) {
-              detectedEquipments.push(eq.trim());
-            }
-          });
-        }
-
-        // Create this unique Frente
-        const newFrente: FrenteItem = {
-          id: `frente-${Date.now()}-${i}`,
-          frenteNumber: frenteNum,
-          activity: analysis.activity || `Labor técnica en Frente ${frenteNum}`,
-          description: analysis.description || `Supervisión de actividades constructivas en el frente ${frenteNum}.`,
-          photoUrl: base64,
-          photoFileName: file.name || `frente_${frenteNum}.jpg`,
-          personnel: {
-            residenteInterventoria: analysis.suggestedPersonnel?.residenteInterventoria ?? 1,
-            residenteContratista: analysis.suggestedPersonnel?.residenteContratista ?? 1,
-            siso: analysis.suggestedPersonnel?.siso ?? 1,
-            obreros: analysis.suggestedPersonnel?.obreros ?? 4,
-            topografo: analysis.suggestedPersonnel?.topografo ?? 0,
-          },
-          novedades: '', // Blank by default
-        };
-
-        accumulatedFrentes.push(newFrente);
+accumulatedFrentes.push(newFrente);;
 
         // Update state progressively so the user sees each Frente appear live!
         setFormData((prev) => ({
