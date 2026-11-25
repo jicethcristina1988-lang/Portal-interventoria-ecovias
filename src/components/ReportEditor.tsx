@@ -145,7 +145,7 @@ export const ReportEditor: React.FC<ReportEditorProps> = ({
         ];
 
         // Call individual photo analysis endpoint
-        const response = await const newFrente: FrenteItem = {
+        const newFrente: FrenteItem = {
   id: `frente-${Date.now()}-${i}`,
   frenteNumber: frenteNum,
   activity: '',
